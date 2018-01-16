@@ -4,3 +4,7 @@
 .g-right {
     float: right;
 }
+.mat-toolbar {
+    background-color: #593080;
+    color: #FBFAFC;
+}
