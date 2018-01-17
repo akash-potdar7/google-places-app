@@ -19,6 +19,7 @@ import {
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { DataService } from './common/data.service';
+import { AgmCoreModule } from '@agm/core';
 
 const appRoutes: Routes = [
   { path: 'login', component: FormsComponent },
@@ -59,7 +60,11 @@ export function getAuthServiceConfigs() {
     SocialLoginModule,
     RouterModule.forRoot(
       appRoutes
-    )
+    ),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBSEW-ZHLjieAPJPHGg0cHJT6UESGqgJPY',
+      libraries: ["places"]
+    })
   ],
   providers: [{
     provide: AuthServiceConfig,

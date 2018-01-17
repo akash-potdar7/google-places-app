@@ -1,4 +1,4 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { User } from '../model/user';
 import { AuthService, GoogleLoginProvider } from 'angular5-social-login';
@@ -18,19 +18,10 @@ export class FormsComponent implements OnInit {
   public formControlEmail = new FormControl('',[ Validators.required ]);
   public formControlPassword = new FormControl('',[ Validators.required ]);
 
-  constructor(private googleAuthService: AuthService, private ngZone: NgZone, private router: Router, private dataService: DataService) { }
+  constructor(private googleAuthService: AuthService, private router: Router, private dataService: DataService) { }
 
   ngOnInit() {
-  }
-
-  onSignIn(googleUser) {
-    debugger
-    console.log(googleUser);
-    /* let profile = googleUser.getBasicProfile();
-    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-    console.log('Name: ' + profile.getName());
-    console.log('Image URL: ' + profile.getImageUrl());
-    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present. */
+    console.log('form');
   }
 
   googleSignIn() {
